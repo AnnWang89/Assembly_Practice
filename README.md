@@ -18,5 +18,5 @@
      ![](https://i.imgur.com/EGYlVaY.png)
 
 * Bonus
-*
+
     ![](https://i.imgur.com/Z1UAqEz.png)
