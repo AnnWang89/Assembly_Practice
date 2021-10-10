@@ -10,7 +10,7 @@ INCLUDE Irvine32.inc
 ; Redifinition is necessary for using stdcall in .model directive
 ; using "start" is because for linking to WinDbg.  added by Huang
 
-CountMatches proto, A1:ptr sdword, A2:ptr sdword, leng:dword	;¬°¤F²Å¦Xv1.v2.v3ªº¤j¤p¡A©Ò¥H¨Ï¥Îdword
+CountMatches proto, A1:ptr sdword, A2:ptr sdword, leng:dword	;ç‚ºäº†ç¬¦åˆv1.v2.v3çš„å¤§å°ï¼Œæ‰€ä»¥ä½¿ç”¨dword
 main          EQU start@0
 
 .data
@@ -25,29 +25,29 @@ main PROC
     OFFSET Array1,
     OFFSET Array2,
     size_Array;
-    mov edx,OFFSET matches;Åã¥Ümatches
-    call WriteString;¦L¥Xstring
-    call Crlf;´«¦æ
+    mov edx,OFFSET matches;é¡¯ç¤ºmatches
+    call WriteString;å°å‡ºstring
+    call Crlf;æ›è¡Œ
     call WaitMsg;
 main endp
 
 CountMatches proc,
     A1:ptr sdword, A2:ptr sdword, leng:dword
-    mov ecx,leng   ;ªø«×¬°¦h¤Ö´N¶]´X¦¸¡A©ñ¤Jeax
-    mov esi,A1     ;§â²Ä¤@­Óarrayªº¦ì¸m©ñ¶iesi
-    mov edi,A2     ;§â²Ä¤G­Óarrayªº¦ì¸m©ñ¶iedi
-    mov eax,0      ;eax¦s¨â­Óarray¬Ûµ¥ªº¼Æ¥Ø
+    mov ecx,leng   ;é•·åº¦ç‚ºå¤šå°‘å°±è·‘å¹¾æ¬¡ï¼Œæ”¾å…¥eax
+    mov esi,A1     ;æŠŠç¬¬ä¸€å€‹arrayçš„ä½ç½®æ”¾é€²esi
+    mov edi,A2     ;æŠŠç¬¬äºŒå€‹arrayçš„ä½ç½®æ”¾é€²edi
+    mov eax,0      ;eaxå­˜å…©å€‹arrayç›¸ç­‰çš„æ•¸ç›®
 L:
     mov ebx,[esi]
     mov edx,[edi]
-    cmp ebx,edx;¦]¬°¤ñ¸û¬O¨â¼Æ¤£¬O¦ì¸m¡A©Ò¥H­n§â¥L­Ì¦s¨ìebx©Medx
-    jne  NOTEqual ; ­Y¤£¬Ûµ¥«h¸õ¨ìNOTEqual
-    add eax,1;¬Ûµ¥eax+1
+    cmp ebx,edx;å› ç‚ºæ¯”è¼ƒæ˜¯å…©æ•¸ä¸æ˜¯ä½ç½®ï¼Œæ‰€ä»¥è¦æŠŠä»–å€‘å­˜åˆ°ebxå’Œedx
+    jne  NOTEqual ; è‹¥ä¸ç›¸ç­‰å‰‡è·³åˆ°NOTEqual
+    add eax,1;ç›¸ç­‰eax+1
  NOTEqual:
-    add esi,4;´«¤U¤@­Ó¥h¤ñ¡A¦]¬°¬Osdword©Ò¥H¥[4
-    add edi,4;´«¤U¤@­Ó¥h¤ñ¡A¦]¬°¬Osdword©Ò¥H¥[4
+    add esi,4;æ›ä¸‹ä¸€å€‹å»æ¯”ï¼Œå› ç‚ºæ˜¯sdwordæ‰€ä»¥åŠ 4
+    add edi,4;æ›ä¸‹ä¸€å€‹å»æ¯”ï¼Œå› ç‚ºæ˜¯sdwordæ‰€ä»¥åŠ 4
     loop L
-    call WriteInt;¦L¥X¬Û¦Pªº¼Æ¥Ø
+    call WriteInt;å°å‡ºç›¸åŒçš„æ•¸ç›®
     ret
 CountMatches endp
 
