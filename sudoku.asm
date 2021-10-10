@@ -132,7 +132,7 @@ main PROC
 		WrongAnswer:
 			mov eax,4    ;Set to Red Color
 			call SetTextColor
-			mWrite "Wrong Input !  �ás��  �ás��  �ás�� "
+			mWrite "Wrong Input !  ¡Ã¡s¡Ã  ¡Ã¡s¡Ã  ¡Ã¡s¡Ã "
 			inc WrongCounter
 			mov eax,15    ;Set Color Back to white
 			call SetTextColor
